@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <h1>Products</h1>
+
+    <div class="products">
+
+        {% for product in products %}
+
+        <div class="product-card">
+
+            <h2>{{ product[1] }}</h2>
+
+            <p>{{ product[2] }}</p>
+
+            <h3>₹{{ product[3] }}</h3>
+
+            <a
+                href="/product/{{ product[0] }}"
+                class="button"
+            >
+                View Product
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
